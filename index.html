@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta
+      name="description"
+      content="Guia Tecnológico Contra o Desperdício: Verde que Alimenta — Uma plataforma interativa que ajuda pequenos produtores a reduzir o desperdício na cadeia logística com tecnologias sustentáveis."
+    />
+    <title>Verde que Alimenta | Guia Tecnológico Contra o Desperdício</title>
+    <link rel="stylesheet" href="style.css"/>
+  </head>
+
+  <body>
+    <!-- Cabeçalho/NAV -->
+    <header class="site-header" role="banner">
+      <nav class="nav-container" aria-label="Navegação principal">
+        <a href="#inicio" class="nav-logo" aria-label="Verde que Alimenta — início">
+          <img src="img/prototipo/logotipo.png" alt="Logo VerdeQueAlimenta, folha sustentável" class="logo-icon" aria-hidden="true" />
+          <p class="logo-text">VerdeQue<strong>Alimenta</strong></p>
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Abrir menu de navegação">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+        <ul class="nav-menu" id="navMenu" role="list">
+          <li><a href="#inicio" class="nav-link">Início</a></li>
+          <li><a href="#problema" class="nav-link">O Problema</a></li>
+          <li><a href="#roteiro" class="nav-link">Roteiro Interativo</a></li>
+          <li><a href="#simulador" class="nav-link">Simulador</a></li>
+          <li><a href="#sobre" class="nav-link">Sobre</a></li>
+        </ul>
+      </nav>
+
+      <!-- ===== BARRA DE ACESSIBILIDADE ===== -->
+      <div class="acessibilidade-barra" role="toolbar" aria-label="Opções de acessibilidade">
+        <button id="btnContraste" class="acess-btn" type="button" aria-pressed="false">
+          <span class="acess-icone" aria-hidden="true">◐</span>
+          Alto Contraste
+        </button>
+        <button id="btnFonteMais" class="acess-btn" type="button" aria-label="Aumentar tamanho da fonte">
+          <span class="acess-icone" aria-hidden="true">A+</span>
+          Aumentar Fonte
+        </button>
+        <button id="btnFonteMenos" class="acess-btn" type="button" aria-label="Diminuir tamanho da fonte">
+          <span class="acess-icone" aria-hidden="true">A-</span>
+          Diminuir Fonte
+        </button>
+      </div>
+
+    </header>
+
+    <main id="conteudo-principal">
+
+      <!-- ===== SEÇÃO 1: HERO ===== -->
+      <section class="hero-section" id="inicio" aria-labelledby="hero-titulo">
+        <div class="hero-bg-decor" aria-hidden="true">
+          <div class="decor-circle decor-circle--1"></div>
+          <div class="decor-circle decor-circle--2"></div>
+          <!-- <div class="decor-circle decor-circle--3"></div> -->
+          <div class="decor-dots"></div>
+        </div>
+        
+        <div class="container hero-content">
+          <h1 class="hero-titulo" id="hero-titulo">
+            Guia Tecnológico<br/>
+            <em>Contra o Desperdício</em>
+          </h1>
+          <p class="hero-subtitulo">
+            Uma plataforma interativa para pequenos produtores e cooperativas reduzirem o desperdício de alimentos com tecnologia e inteligência sustentável.
+          </p>
+          <div class="hero-ctas">
+            <a href="#roteiro" class="btn btn--primary">Explorar o Roteiro</a>
+            <a href="#problema" class="btn btn--outline">Entender o Problema</a>
+          </div>
+          <div class="hero-stats" aria-label="Estatísticas sobre desperdício de alimentos">
+            <div class="stat-card">
+              <span class="stat-numero" id="statCounter1" data-target="30">0</span>
+              <span class="stat-sufixo">%</span>
+              <span class="stat-label">da produção é desperdiçada no transporte</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-numero" id="statCounter2" data-target="1300">0</span>
+              <span class="stat-sufixo">Mt</span>
+              <span class="stat-label">de alimentos perdidos por ano no mundo</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-numero" id="statCounter3" data-target="8">0</span>
+              <span class="stat-sufixo">%</span>
+              <span class="stat-label">das emissões globais vêm do desperdício</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== SEÇÃO 2: O PROBLEMA ===== -->
+      <section class="problema-section" id="problema" aria-labelledby="problema-titulo">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">O Problema</span>
+            <h2 class="section-titulo" id="problema-titulo">
+              O Caminho do Campo ao Prato Está Cheio de Perdas
+            </h2>
+            <p class="section-descricao">
+              Estima-se que cerca de <strong>30% dos alimentos produzidos</strong> no Brasil se perdem antes de chegar ao consumidor. O maior vilão é a logística ineficiente: temperatura errada, embalagens inadequadas e rotas mal planejadas destroem toneladas de comida — e geram impacto ambiental gravíssimo.
+            </p>
+          </div>
+
+          <div class="problema-grid">
+            <article class="problema-card" aria-labelledby="prob1-titulo">
+              <img src="img/openclipart-vectors-thermometer-153138.svg" alt="Termômetro representando temperatura inadequada" class="problema-icone"/>
+              <h3 id="prob1-titulo">Temperatura Inadequada</h3>
+              <p>A quebra da cadeia do frio durante o transporte é a principal causa de perda em frutas, hortaliças e laticínios. Sem monitoramento em tempo real, não há como agir rápido o suficiente.</p>
+              <div class="problema-impacto">
+                <span class="impacto-label">Impacto estimado:</span>
+                <span class="impacto-valor">até 45% da perda</span>
+              </div>
+            </article>
+
+            <article class="problema-card" aria-labelledby="prob2-titulo">
+              <img src="imagens/icone-embalagem.svg" alt="Caixa representando embalagens inadequadas" class="problema-icone"/>
+              <h3 id="prob2-titulo">Embalagens Inadequadas</h3>
+              <p>O uso de embalagens que não protegem contra impactos, umidade e luz danifica produtos frágeis. Além disso, embalagens plásticas descartáveis agravam a poluição ambiental.</p>
+              <div class="problema-impacto">
+                <span class="impacto-label">Impacto estimado:</span>
+                <span class="impacto-valor">até 20% da perda</span>
+              </div>
+            </article>
+
+            <article class="problema-card" aria-labelledby="prob3-titulo">
+              <img src="imagens/icone-embalagem.svg" alt="Caixa representando embalagens inadequadas" class="problema-icone"/>
+              <h3 id="prob3-titulo">Rotas Ineficientes</h3>
+              <p>Percursos longos e mal planejados aumentam o tempo de exposição dos alimentos, o consumo de combustível e as emissões de CO₂ — tornando toda a cadeia mais cara e mais poluente.</p>
+              <div class="problema-impacto">
+                <span class="impacto-label">Impacto estimado:</span>
+                <span class="impacto-valor">até 15% da perda</span>
+              </div>
+            </article>
+
+            <article class="problema-card" aria-labelledby="prob4-titulo">
+              <img src="imagens/icone-embalagem.svg" alt="Caixa representando embalagens inadequadas" class="problema-icone"/>
+              <h3 id="prob4-titulo">Gestão Manual e Imprecisa</h3>
+              <p>O controle de estoque feito à mão ou em planilhas desatualizadas leva a erros de previsão de demanda, acúmulo de produtos perecíveis e vencimentos desnecessários.</p>
+              <div class="problema-impacto">
+                <span class="impacto-label">Impacto estimado:</span>
+                <span class="impacto-valor">até 20% da perda</span>
+              </div>
+            </article>
+          </div>
+
+          <div class="problema-destaque" role="note" aria-label="Consequência ambiental">
+            <div class="destaque-texto">
+              <strong>Impacto Ambiental Direto:</strong> Cada tonelada de alimento desperdiçada representa toda a água, energia e solo usados na sua produção — mais as emissões do transporte e da decomposição em aterros. Reduzir o desperdício é <em>uma das ações climáticas mais eficazes que existem.</em>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== SEÇÃO 3: ROTEIRO INTERATIVO ===== -->
+      <section class="roteiro-section" id="roteiro" aria-labelledby="roteiro-titulo">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">Roteiro Interativo</span>
+            <h2 class="section-titulo" id="roteiro-titulo">
+              Escolha sua Cultura e Descubra as Soluções
+            </h2>
+            <p class="section-descricao">
+              Selecione o tipo de cultura que você produz e o roteiro carregará as principais causas de desperdício e as tecnologias sustentáveis mais eficazes para o seu contexto.
+            </p>
+          </div>
+
+          <!-- Filtros de cultura -->
+          <div class="cultura-filtros" role="group" aria-label="Selecione o tipo de cultura">
+            <button class="cultura-btn active" data-cultura="graos" aria-pressed="true">
+              <img src="imagens/cultura-graos.svg" alt="" class="cultura-img" aria-hidden="true" />
+              <span>Grãos</span>
+            </button>
+            <button class="cultura-btn" data-cultura="frutas" aria-pressed="false">
+              <img src="imagens/cultura-frutas.svg" alt="" class="cultura-img" aria-hidden="true" />
+              <span>Frutas</span>
+            </button>
+            <button class="cultura-btn" data-cultura="hortalicas" aria-pressed="false">
+              <img src="imagens/cultura-hortalicas.svg" alt="" class="cultura-img" aria-hidden="true" />
+              <span>Hortaliças</span>
+            </button>
+            <button class="cultura-btn" data-cultura="laticinios" aria-pressed="false">
+              <img src="imagens/cultura-laticinios.svg" alt="" class="cultura-img" aria-hidden="true" />
+              <span>Laticínios</span>
+            </button>
+            <button class="cultura-btn" data-cultura="carnes" aria-pressed="false">
+              <img src="imagens/cultura-carnes.svg" alt="" class="cultura-img" aria-hidden="true" />
+              <span>Carnes</span>
+            </button>
+          </div>
+
+          <!-- Painel de resultados do roteiro -->
+          <div class="roteiro-painel" id="roteiroPainel" aria-live="polite" aria-atomic="false">
+            <div class="roteiro-cultura-header" id="roteiroCulturaHeader">
+              <div class="cultura-info">
+                <img src="imagens/cultura-graos.svg" alt="" class="cultura-img-grande" id="culturaImgGrande" aria-hidden="true" />
+                <div>
+                  <h3 class="cultura-nome" id="culturaNome">Grãos</h3>
+                  <p class="cultura-descricao" id="culturaDescricao">Carregando informações...</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="roteiro-colunas">
+              <!-- Causas -->
+              <div class="roteiro-coluna">
+                <h4 class="coluna-titulo coluna-titulo--causas">Principais Causas de Perda</h4>
+                <ul class="causas-lista" id="causasLista" role="list" aria-label="Causas de desperdício para a cultura selecionada"></ul>
+              </div>
+
+              <!-- Soluções -->
+              <div class="roteiro-coluna">
+                <h4 class="coluna-titulo coluna-titulo--solucoes"> Soluções Tecnológicas Sustentáveis </h4>
+                <ul class="solucoes-lista" id="solucoesLista" role="list" aria-label="Soluções tecnológicas para a cultura selecionada"></ul>
+              </div>
+            </div>
+
+            <!-- Tecnologia em Destaque -->
+            <div class="tecnologia-destaque" id="tecnologiaDestaque" aria-label="Tecnologia em destaque">
+              <div class="tec-badge">
+                <p>Destaque</p>
+              </div>
+              <h4 class="tec-titulo" id="tecTitulo">Tecnologia em Destaque</h4>
+              <p class="tec-descricao" id="tecDescricao">Carregando...</p>
+              <div class="tec-metricas" id="tecMetricas" role="list" aria-label="Métricas da tecnologia em destaque"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== SEÇÃO 4: SIMULADOR ===== -->
+      <section class="simulador-section" id="simulador" aria-labelledby="simulador-titulo">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag section-tag--light">Simulador de Impacto</span>
+            <h2 class="section-titulo section-titulo--light" id="simulador-titulo">
+              Calcule o Quanto Você Pode Economizar
+            </h2>
+            <p class="section-descricao section-descricao--light">
+              Informe sua produção estimada e o tipo de cultura para ver quanto alimento e dinheiro seria recuperado ao adotar as tecnologias sustentáveis do roteiro.
+            </p>
+          </div>
+
+          <div class="simulador-wrapper">
+            <!-- Formulário do simulador -->
+            <div class="simulador-form-area">
+              <h3 class="form-titulo">Configure sua Produção</h3>
+              <div class="campo-grupo">
+                <label for="inputProducao" class="campo-label">Produção estimada (em toneladas/mês)</label>
+                <input
+                  type="number"
+                  id="inputProducao"
+                  class="campo-input"
+                  min="1"
+                  max="100000"
+                  placeholder="Ex: 50"
+                  aria-describedby="inputProducaoHelp"
+                />
+                <span class="campo-help" id="inputProducaoHelp">Digite um valor entre 1 e 100.000 toneladas</span>
+              </div>
+
+              <div class="campo-grupo">
+                <label for="selectCultura" class="campo-label">Tipo de cultura</label>
+                <select id="selectCultura" class="campo-select" aria-describedby="selectCulturaHelp">
+                  <option value="">Selecione uma cultura</option>
+                  <option value="graos">Grãos</option>
+                  <option value="frutas">Frutas</option>
+                  <option value="hortalicas">Hortaliças</option>
+                  <option value="laticinios">Laticínios</option>
+                  <option value="carnes">Carnes</option>
+                </select>
+                <span class="campo-help" id="selectCulturaHelp">Cada cultura tem uma taxa de desperdício diferente</span>
+              </div>
+
+              <div class="campo-grupo">
+                <label for="selectCenario" class="campo-label">Cenário de adoção tecnológica</label>
+                <select id="selectCenario" class="campo-select">
+                  <option value="basico">Básico (30% de redução)</option>
+                  <option value="intermediario" selected>Intermediário (55% de redução)</option>
+                  <option value="avancado">Avançado (80% de redução)</option>
+                </select>
+              </div>
+
+              <button class="btn btn--primary btn--full" id="btnCalcular" type="button">
+                Calcular Impacto
+              </button>
+
+              <p class="sim-nota" role="note">
+                * Estimativas baseadas em dados da Embrapa e FAO sobre perdas pós-colheita no Brasil.
+              </p>
+            </div>
+
+            <!-- Resultados do simulador -->
+            <div class="simulador-resultados" id="simuladorResultados" aria-live="polite" aria-atomic="true" aria-label="Resultados do simulador">
+              <div class="resultado-placeholder" id="resultadoPlaceholder" aria-hidden="false">
+                <p>Preencha os campos ao lado e clique em <strong>Calcular Impacto</strong> para ver sua economia estimada.</p>
+              </div>
+
+              <div class="resultado-conteudo" id="resultadoConteudo" hidden aria-hidden="true">
+                <h3 class="resultado-titulo">Seu Potencial de Impacto</h3>
+                <div class="resultado-grid">
+                  <div class="resultado-card resultado-card--verde">
+                    <span class="res-valor" id="resAlimentoSalvo">0</span>
+                    <span class="res-unidade">toneladas</span>
+                    <span class="res-label">de alimento recuperado por mês</span>
+                  </div>
+                  <div class="resultado-card resultado-card--terra">
+                    <span class="res-valor" id="resEconomia">R$ 0</span>
+                    <span class="res-unidade">/ mês</span>
+                    <span class="res-label">em valor econômico preservado</span>
+                  </div>
+                  <div class="resultado-card resultado-card--azul">
+                    <span class="res-valor" id="resAgua">0</span>
+                    <span class="res-unidade">m³</span>
+                    <span class="res-label">de água virtual economizada</span>
+                  </div>
+                  <div class="resultado-card resultado-card--cinza">
+                    <span class="res-valor" id="resCO2">0</span>
+                    <span class="res-unidade">kg CO₂eq</span>
+                    <span class="res-label">de emissões evitadas por mês</span>
+                  </div>
+                </div>
+
+                <div class="resultado-equivalencias" id="resultadoEquivalencias" aria-label="Equivalências dos resultados">
+                  <h4 class="equiv-titulo">Isso é equivalente a...</h4>
+                  <ul class="equiv-lista" id="equivLista" role="list"></ul>
+                </div>
+
+                <div class="resultado-tecnologias" id="resultadoTecnologias" aria-label="Tecnologias recomendadas para sua cultura">
+                  <h4 class="tec-recom-titulo">Tecnologias Recomendadas para Você</h4>
+                  <ul class="tec-recom-lista" id="tecRecomLista" role="list"></ul>
+                </div>
+
+                <button class="btn btn--outline btn--full" id="btnReiniciar" type="button">
+                  Simular Novamente
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- ===== SEÇÃO 5: SOBRE / TEMA ===== -->
+      <section class="sobre-section" id="sobre" aria-labelledby="sobre-titulo">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">Sobre o Projeto</span>
+            <h2 class="section-titulo" id="sobre-titulo">
+              Agro Forte, Futuro Sustentável
+            </h2>
+          </div>
+          <div class="sobre-grid">
+            <div class="sobre-texto">
+              <p>A plataforma <em>Verde que Alimenta</em> nasce da convicção de que a tecnologia, aplicada de forma consciente e acessível, é uma das mais poderosas aliadas dos pequenos produtores rurais na redução do desperdício e na construção de uma cadeia alimentar mais justa e sustentável.</p>
+              <p>Cada funcionalidade foi projetada para ser prática, visualmente clara e diretamente aplicável ao cotidiano do campo brasileiro.</p>
+            </div>
+            <div class="sobre-visual" aria-hidden="true">
+              <div class="sobre-card-visual">
+                <div class="visual-titulo">Meta ODS 12.3</div>
+                <div class="visual-desc">Reduzir pela metade o desperdício de alimentos per capita global até 2030</div>
+                <div class="visual-progress-label">Progresso necessário:</div>
+                <div class="visual-progress-bar" role="presentation">
+                  <div class="visual-progress-fill visual-progress-fill--meta"></div>
+                </div>
+                <div class="visual-fonte">Fonte: ONU / Agenda 2030</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+ 
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer" role="contentinfo">
+      <div class="container footer-conteudo">
+        <div class="footer-marca">
+          <img src="img/prototipo/logotipo.png" alt="Logo VerdeQueAlimenta, folha sustentável" class="logo-icon" aria-hidden="true" />
+          <span class="logo-text">VerdeQue<strong>Alimenta</strong></span>
+        </div>
+        <p class="footer-tema">
+          <em>"Agro forte, futuro sustentável: equilíbrio entre produção e meio ambiente"</em>
+        </p>
+        <p class="footer-concurso">Concurso Agrinho 2026 — Categoria Programação — Subcategoria 3: Front-End</p>
+        <p class="footer-creditos">
+          Dados de referência: <a href="https://www.embrapa.br" target="_blank" rel="noopener noreferrer">Embrapa</a> · <a href="https://www.fao.org" target="_blank" rel="noopener noreferrer">FAO</a> · <a href="https://brasil.un.org" target="_blank" rel="noopener noreferrer">Nações Unidas - Brasil</a> · <a href="https://www.sistemafaep.org.br/agrinho/" target="_blank" rel="noopener noreferrer">Agrinho</a>
+        </p>
+      </div>
+    </footer>
+
+    <meta name="agrinho" content="agrinho2026" />
+    <script src="script.js"></script>
+  </body>
+</html>
