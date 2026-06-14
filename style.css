@@ -1444,13 +1444,9 @@ select:focus-visible {
 }
 
 /* MODO ALTO CONTRASTE */
-/* remove decorações de fundo (gradientes, círculos, pontilhados) */
+/* remove decorações de fundo (gradientes, círculos) */
 body.alto-contraste .hero-bg-decor,
-body.alto-contraste .decor-circle,
-body.alto-contraste .decor-dots,
-body.alto-contraste .problema-card::before,
-body.alto-contraste .simulador-section::before,
-body.alto-contraste .sobre-card-visual::before {
+body.alto-contraste .decor-circle {
   display: none !important;
 }
 

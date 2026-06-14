@@ -4,7 +4,7 @@
 const CULTURAS = {
   graos: {
     nome: "Grãos",
-    imgSrc: "img/prototipo/graos.svg",
+    imgSrc: "img/graos.svg",
     imgAlt: "Saco de grãos",
     descricao: 'Soja, milho, trigo, arroz e feijão. A categoria que mais gera receita no agronegócio brasileiro.',
     taxaDesperdicio: 0.12,
@@ -38,7 +38,7 @@ const CULTURAS = {
 
   frutas: {
     nome: "Frutas",
-    imgSrc: "img/prototipo/frutas.svg",
+    imgSrc: "img/frutas.svg",
     imgAlt: "Cesto de frutas",
     descricao: "Laranja, banana, maçã, manga, morango e demais frutas frescas de alta perecibilidade.",
     taxaDesperdicio: 0.38,
@@ -72,7 +72,7 @@ const CULTURAS = {
 
   hortalicas: {
     nome: "Hortaliças",
-    imgSrc: "img/prototipo/hortalicas.svg",
+    imgSrc: "img/hortalicas.svg",
     imgAlt: "Salada de hortaliças",
     descricao: "Alface, tomate, cenoura, beterraba, pimentão e demais vegetais frescos de alta rotatividade.",
     taxaDesperdicio: 0.45,
@@ -106,7 +106,7 @@ const CULTURAS = {
 
   laticinios: {
     nome: "Laticínios",
-    imgSrc: "img/prototipo/laticinios.svg",
+    imgSrc: "img/laticinios.svg",
     imgAlt: "Jarra de leite",
     descricao: "Leite fluido, queijos, iogurtes e manteiga. Produtos com cadeia do frio crítica e prazos curtos.",
     taxaDesperdicio: 0.2,
@@ -140,7 +140,7 @@ const CULTURAS = {
 
   carnes: {
     nome: 'Carnes',
-    imgSrc: "img/prototipo/carnes.svg",
+    imgSrc: "img/carnes.svg",
     imgAlt: "Carne bovina",
     descricao: 'Carne bovina, suína, de frango e pescados. Alta densidade proteica e cadeia logística complexa.',
     taxaDesperdicio: 0.22,
@@ -173,7 +173,7 @@ const CULTURAS = {
   },
 };
 
-// DADOS: CENÁRIOS DO SIMULADOR
+// DADOS: CENÁRIOS DO SIMULADOR 
 
 const CENARIOS = {
   basico: { fator: 0.3, nome: "Básico" },
@@ -690,3 +690,4 @@ if (document.readyState === "loading") {
 } else {
   inicializar();
 }
+
