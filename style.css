@@ -1,9 +1,4 @@
-/* ============================================================
-   style.css — Alimento Inteligente | Concurso Agrinho 2026
-   Paleta: Verde (sustentabilidade) + Terra/Marrom (agro) + Fundo claro
-   ============================================================ */
-
-/* ---------- 1. RESET & BASE ---------- */
+/* RESET & BASE */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -33,6 +28,7 @@
   --texto-escuro:    #1c2b22;
   --texto-medio:     #3d5247;
   --texto-suave:     #6b8278;
+  --amarelo:         #d3d301;
 
   /* Tipografia */
   --fonte-display:   'Georgia', 'Times New Roman', serif;
@@ -105,14 +101,14 @@ select:focus-visible {
   border-radius: var(--radius-sm);
 }
 
-/* ---------- 2. UTILITÁRIOS ---------- */
+/* UTILITÁRIOS */
 .container {
   max-width: 1160px;
   margin: 0 auto;
   padding: 0 var(--espaco-lg);
 }
 
-/* ---------- 3. BOTÕES ---------- */
+/* BOTÕES */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -172,7 +168,7 @@ select:focus-visible {
   width: 100%;
 }
 
-/* ---------- 4. CABEÇALHO & NAV ---------- */
+/* CABEÇALHO & NAV */
 .site-header {
   position: sticky;
   top: 0;
@@ -209,7 +205,7 @@ select:focus-visible {
   color: var(--verde-medio);
 }
 
-/* Logo no header e footer */
+/* logo no header e footer */
 .logo-icon {
   width: 50px;
   height: 50px;
@@ -285,22 +281,20 @@ select:focus-visible {
 .hero-section {
   position: relative;
   padding: var(--espaco-3xl) 0 var(--espaco-2xl);
-  overflow: hidden; /* Mantido: essencial para conter o desfoque nas bordas */
+  overflow: hidden; 
   min-height: 90vh;
   display: flex;
   align-items: center;
 }
 
-/* Pseudo-elemento que controla o fundo de forma isolada */
 .hero-section::before {
   content: "";
   position: absolute;
-  /* Margens negativas para eliminar a borda branca gerada pelo blur */
   top: -10px;
   left: -10px;
   right: -10px;
   bottom: -10px;
-  background-image: url(img/prototipo/1737576-soybean-1831703_1920.jpg);
+  background-image: url(img/hero-fundo.jpg);
   background-size: cover;
   background-position: center;
   opacity: 0.2;        
@@ -308,7 +302,6 @@ select:focus-visible {
   z-index: -1;       
 }
 
-/*  */
 .hero-bg-decor {
   position: absolute;
   inset: 0;
@@ -338,27 +331,6 @@ select:focus-visible {
   bottom: -80px;
   left: -60px;
   animation: pulsar 10s ease-in-out infinite reverse;
-}
-
-/* .decor-circle--3 { 
-  width: 200px;
-  height: 200px;
-  background: radial-gradient(circle, var(--terra-medio), transparent);
-  top: 4%;
-  left: 5%;
-  animation: pulsar 6s ease-in-out infinite;
-}
-*/
-
-.decor-dots {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 300px;
-  height: 300px;
-  background-image: radial-gradient(var(--verde-suave) 1.5px, transparent 1.5px);
-  background-size: 24px 24px;
-  opacity: 0.4;
 }
 
 @keyframes pulsar {
@@ -402,7 +374,7 @@ select:focus-visible {
   animation: fadeUp 0.7s 0.3s ease both;
 }
 
-/* Estatísticas hero */
+/* estatísticas hero */
 .hero-stats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -452,7 +424,7 @@ select:focus-visible {
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ---------- 6. SEÇÕES GENÉRICAS ---------- */
+/* SECOES GENERICAS */
 .section-header {
   text-align: center;
   margin-bottom: var(--espaco-2xl);
@@ -503,7 +475,7 @@ select:focus-visible {
   color: rgba(255, 255, 255, 0.82);
 }
 
-/* ---------- 7. SEÇÃO PROBLEMA ---------- */
+/* SECAO PROBLEMA */
 .problema-section {
   padding: var(--espaco-3xl) 0;
   background-color: var(--branco);
@@ -517,14 +489,41 @@ select:focus-visible {
 }
 
 .problema-card {
-  background-image: url(img/WhatsApp\ Image\ 2026-04-30\ at\ 00.22.17.jpeg);
-  /* background: var(--off-white); */
   border: 1px solid var(--cinza-claro);
   border-radius: var(--radius-lg);
   padding: var(--espaco-xl);
   transition: transform var(--transicao), box-shadow var(--transicao), border-color var(--transicao);
   position: relative;
   overflow: hidden;
+  z-index: 1;
+}
+
+.problema-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-size: cover;
+  background-position: center;
+  filter: blur(2px); 
+  opacity: 0.2;  
+  z-index: -1;
+  transform: scale(1.1);
+}
+
+.card-temperatura::after {
+  background-image: url(img/temperatura-fundo.jpg);
+}
+
+.card-embalagem::after {
+  background-image: url(img/embalagens-fundo.jpg);
+}
+
+.card-rotas::after {
+  background-image: url(img/rotas-fundo.jpg);
+}
+
+.card-gestao::after {
+  background-image: url(img/gestao-fundo.jpg);
 }
 
 .problema-card::before {
@@ -538,6 +537,7 @@ select:focus-visible {
   transform: scaleX(0);
   transform-origin: left;
   transition: transform var(--transicao);
+  z-index: 2;
 }
 
 .problema-card:hover {
@@ -549,14 +549,7 @@ select:focus-visible {
 .problema-card:hover::before {
   transform: scaleX(1);
 }
-
-/* .problema-icone {
-  font-size: 2rem;
-  margin-bottom: var(--espaco-md);
-  display: block;
-} */
-
-/* Ícones dos cards de problema */
+/*  */
 .problema-icone {
   width: 52px;
   height: 52px;
@@ -627,7 +620,7 @@ select:focus-visible {
   color: var(--terra-escuro);
 }
 
-/* ---------- 8. SEÇÃO ROTEIRO ---------- */
+/* SECAO ROTEIRO */
 .roteiro-section {
   padding: var(--espaco-3xl) 0;
   background-color: var(--off-white);
@@ -639,6 +632,19 @@ select:focus-visible {
   gap: var(--espaco-sm);
   justify-content: center;
   margin-bottom: var(--espaco-xl);
+}
+
+.cultura-img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+.cultura-img-grande {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
 .cultura-btn {
@@ -671,7 +677,7 @@ select:focus-visible {
   box-shadow: 0 4px 14px rgba(45, 134, 83, 0.3);
 }
 
-/* Painel roteiro */
+/* painel roteiro */
 .roteiro-painel {
   background: var(--branco);
   border: 1px solid var(--cinza-claro);
@@ -786,7 +792,7 @@ select:focus-visible {
   to   { opacity: 1; transform: translateX(0); }
 }
 
-/* Tecnologia em destaque */
+/* tecnologia em destaque */
 .tecnologia-destaque {
   margin: 0;
   padding: var(--espaco-xl);
@@ -844,7 +850,7 @@ select:focus-visible {
   gap: var(--espaco-xs);
 }
 
-/* ---------- 9. SEÇÃO SIMULADOR ---------- */
+/* SECAO SIMULADOR */
 .simulador-section {
   padding: var(--espaco-3xl) 0;
   background: linear-gradient(145deg, var(--verde-escuro) 0%, #1d6b43 60%, var(--terra-escuro) 100%);
@@ -872,7 +878,7 @@ select:focus-visible {
   z-index: 1;
 }
 
-/* Formulário */
+/* formulario */
 .simulador-form-area {
   background: rgba(255,255,255,0.08);
   backdrop-filter: blur(10px);
@@ -944,10 +950,9 @@ select:focus-visible {
   line-height: 1.5;
 }
 
-/* Resultados */
+/* resultados */
 .simulador-resultados {
-  background-image: url(img/prototipo/calculadora.svg);
-  /* background: var(--off-white); */
+  background-image: url(img/calculadora.svg);
   background-size: cover;
   border-radius: var(--radius-lg);
   padding: var(--espaco-xl);
@@ -1064,7 +1069,7 @@ select:focus-visible {
   line-height: 1.4;
 }
 
-/* Equivalências */
+/* equivalencias */
 .resultado-equivalencias {
   background: var(--off-white);
   border-radius: var(--radius-md);
@@ -1096,7 +1101,7 @@ select:focus-visible {
   color: var(--texto-medio);
 }
 
-/* Tecnologias recomendadas */
+/* tecnologias recomendadas */
 .resultado-tecnologias {
   background: var(--verde-fundo);
   border: 1px solid var(--verde-suave);
@@ -1119,7 +1124,7 @@ select:focus-visible {
   padding: var(--espaco-xs) 0;
 }
 
-/* ---------- 10. SEÇÃO SOBRE ---------- */
+/* SECAO SOBRE */
 .sobre-section {
   padding: var(--espaco-3xl) 0;
   background-color: var(--branco);
@@ -1143,7 +1148,7 @@ select:focus-visible {
   margin-bottom: 0;
 }
 
-/* Visual ODS */
+/* visual ODS */
 .sobre-card-visual {
   background: linear-gradient(145deg, var(--verde-fundo), var(--terra-fundo));
   border: 1px solid var(--verde-suave);
@@ -1206,7 +1211,7 @@ select:focus-visible {
   color: var(--texto-suave);
 }
 
-/* ---------- 11. FOOTER ---------- */
+/* FOOTER */
 .site-footer {
   background: var(--verde-escuro);
   color: rgba(255,255,255,0.75);
@@ -1265,12 +1270,12 @@ select:focus-visible {
   color: var(--verde-suave);
 }
 
-/* ---------- 12. UTILITÁRIO: hidden ---------- */
+/* UTILITÁRIO: hidden */
 [hidden] {
   display: none !important;
 }
 
-/* ---------- 13. RESPONSIVIDADE ---------- */
+/* RESPONSIVIDADE */
 @media (max-width: 900px) {
   .simulador-wrapper {
     grid-template-columns: 1fr;
@@ -1347,6 +1352,16 @@ select:focus-visible {
     flex-direction: column;
     align-items: flex-start;
   }
+
+  .acessibilidade-barra {
+    gap: var(--espaco-xs);
+    padding: var(--espaco-xs) var(--espaco-md);
+  }
+
+  .acess-btn {
+    font-size: 0.78rem;
+    padding: 0.35rem 0.7rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1364,7 +1379,9 @@ select:focus-visible {
   }
 }
 
-/* ---------- 14. ACESSIBILIDADE: PREFERÊNCIA REDUZIDA DE MOVIMENTO ---------- */
+/* ACESSIBILIDADE */
+
+/* PREFERÊNCIA REDUZIDA DE MOVIMENTO */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
@@ -1376,34 +1393,11 @@ select:focus-visible {
   }
 }
 
-/* Barra de progresso ODS - valor fixo por classe (sem inline style) */
 .visual-progress-fill--meta {
   --fill: 50%;
 }
 
-/* ============================================================
-   IMAGENS (substituição dos emojis)
-   ============================================================ */
-   
-/* Imagens dos botões de cultura */
-.cultura-img {
-  width: 22px;
-  height: 22px;
-  object-fit: contain;
-}
-
-/* Imagem grande no cabeçalho do painel roteiro */
-.cultura-img-grande {
-  width: 56px;
-  height: 56px;
-  object-fit: contain;
-  flex-shrink: 0;
-}
-
-/* ============================================================
-   ACESSIBILIDADE: BARRA DE BOTÕES
-   ============================================================ */
-
+/* BARRA DE BOTÕES */
 .acessibilidade-barra {
   display: flex;
   flex-wrap: wrap;
@@ -1449,18 +1443,8 @@ select:focus-visible {
   line-height: 1;
 }
 
-/* ---------- MODO ALTO CONTRASTE ---------- */
-/* ============================================================
-   MODO ALTO CONTRASTE (versão corrigida)
-   ============================================================ */
-
-/* Base: fundo preto, texto branco */
-body.alto-contraste {
-  background-color: #000000 !important; ;
-  color: #ffffff !important;
-}
-
-/* Remove decorações de fundo (gradientes, círculos, pontilhados) */
+/* MODO ALTO CONTRASTE */
+/* remove decorações de fundo (gradientes, círculos, pontilhados) */
 body.alto-contraste .hero-bg-decor,
 body.alto-contraste .decor-circle,
 body.alto-contraste .decor-dots,
@@ -1470,11 +1454,7 @@ body.alto-contraste .sobre-card-visual::before {
   display: none !important;
 }
 
-/* ============================================================
-   MODO ALTO CONTRASTE (versão com 2 tons: preto + cinza)
-   ============================================================ */
-
-/* ---------- NÍVEL 1: fundo preto (seções/containers maiores) ---------- */
+/* fundo preto (seções/containers maiores) */
 body.alto-contraste .site-header,
 body.alto-contraste .hero-section,
 body.alto-contraste .problema-section,
@@ -1482,27 +1462,28 @@ body.alto-contraste .roteiro-section,
 body.alto-contraste .simulador-section,
 body.alto-contraste .sobre-section,
 body.alto-contraste .site-footer,
-
 body.alto-contraste .roteiro-cultura-header,
 body.alto-contraste .tecnologia-destaque,
 body.alto-contraste .nav-menu,
 body.alto-contraste .acessibilidade-barra {
-  background: #000000 !important;
+  background: black !important;
   background-image: none !important;
-  color: #ffffff !important;
-  border-color: #d3d301 !important;
+  color: var(--branco) !important;
+  border-color: var(--amarelo) !important;
   box-shadow: none !important;
   text-shadow: none !important;
 }
 
-/* ---------- NÍVEL 2: fundo cinza-escuro (cards internos / blocos de conteúdo) ---------- */
+/* fundo cinza (cards internos / blocos de conteúdo)*/
 body.alto-contraste .stat-card,
 body.alto-contraste .roteiro-painel,
 body.alto-contraste .cultura-btn,
 body.alto-contraste .problema-card,
 body.alto-contraste .problema-destaque,
 body.alto-contraste .problema-impacto,
-body.alto-contraste .roteiro-coluna,
+body.alto-contraste .roteiro-colunas,
+body.alto-contraste .roteiro-cultura-header,
+body.alto-contraste .tecnologia-destaque,
 body.alto-contraste .tec-metrica,
 body.alto-contraste .simulador-form-area,
 body.alto-contraste .simulador-resultados,
@@ -1516,21 +1497,21 @@ body.alto-contraste .equiv-item,
 body.alto-contraste .tec-recom-item {
   background: #1a1a1a !important;
   background-image: none !important;
-  color: #ffffff !important;
-  border-color: #d3d301 !important;
+  color: var(--branco) !important;
+  border-color: var(--amarelo) !important;
   box-shadow: none !important;
   text-shadow: none !important;
 }
 
-/* Garante que TODO texto dentro dessas áreas fique branco */
+/* textos em branco */
 body.alto-contraste .hero-subtitulo,
 body.alto-contraste .stat-card *,
 body.alto-contraste .section-descricao,
 body.alto-contraste .problema-card *,
 body.alto-contraste .problema-destaque *,
-body.alto-contraste .roteiro-painel *,
-body.alto-contraste .roteiro-coluna *,
-body.alto-contraste .tecnologia-destaque *,
+body.alto-contraste .roteiro-coluna,
+body.alto-contraste .cultura-descricao, 
+body.alto-contraste .tecnologia-destaque,
 body.alto-contraste .simulador-form-area *,
 body.alto-contraste .resultado-card *,
 body.alto-contraste .sobre-card-visual *,
@@ -1540,96 +1521,79 @@ body.alto-contraste .hero-titulo,
 body.alto-contraste .sobre-texto p,
 body.alto-contraste .resultado-placeholder p,
 body.alto-contraste .footer-tema {
-  color: #ffffff !important;
+  color: var(--branco) !important;
   background: transparent !important;
 }
 
+/* titulos e textos em amarelo */
 body.alto-contraste .res-valor,
 body.alto-contraste .logo-text strong,
 body.alto-contraste .hero-titulo em,
-body.alto-contraste .section-titulo, 
+body.alto-contraste .section-titulo,
+body.alto-contraste .problema-card h3,
+body.alto-contraste .destaque-texto strong,  
+body.alto-contraste .cultura-nome,
+body.alto-contraste .tec-titulo, 
+body.alto-contraste .coluna-titulo, 
 body.alto-contraste .tec-recom-titulo,
 body.alto-contraste .equiv-titulo {
-  /* background-color: transparent !important; */
-  color: #d3d301 !important;
-  border: none !important;
+  color: var(--amarelo) !important;
 }
-/* Tags e badges: amarelo com texto preto, bem destacados */
+
+/* tags e badges */
 body.alto-contraste .section-tag,
-body.alto-contraste .hero-badge {
-  background-color: #d3d301 !important;
-  color: #000000 !important;
-  border: 2px solid #ffffff !important;
+body.alto-contraste .hero-badge,
+body.alto-contraste .tec-badge {
+  background-color: var(--amarelo) !important;
+  color: black !important;
+  border: 2px solid var(--branco) !important;
 }
 
-body.alto-contraste .tec-badge,
-body.alto-contraste .section-tag {
-  background-color: #d3d301 !important;
-  color: #000000 !important;
-  border: 1px solid #686868 !important;
-}
-
-
-/* Links e navegação */
+/* links e navegacao */
 body.alto-contraste a,
 body.alto-contraste .nav-link {
   color: var(--branco) !important;
-  background-color: #000000 !important;
+  background-color: black !important;
   text-decoration: underline;
 }
 
-/* Botões primários: amarelo / preto */
+/* botões primários */
 body.alto-contraste .btn--primary,
 body.alto-contraste .acess-btn[aria-pressed="true"],
 body.alto-contraste .cultura-btn.active,
 body.alto-contraste .cultura-btn[aria-pressed="true"] {
-  background-color: #d3d301 !important;
-  color: #000000 !important;
-  border: 2px solid #ffffff !important;
+  background-color: var(--amarelo) !important;
+  color: black !important;
+  border: 2px solid var(--branco) !important;
 }
 
-/* Botões outline / secundários */
+/* botões outline/secundários */
 body.alto-contraste .btn--outline,
 body.alto-contraste .acess-btn {
-  background-color: #000000 !important;
-  color: #d3d301 !important;
-  border: 2px solid #d3d301 !important;
+  background-color: black !important;
+  color: var(--amarelo) !important;
+  border: 2px solid var(--amarelo) !important;
 }
 
-/* Campos de formulário (simulador) */
+/* simulador */
 body.alto-contraste .campo-input,
 body.alto-contraste .campo-select {
-  background-color: #000000 !important;
-  color: #ffffff !important;
-  border: 2px solid #d3d301 !important;
+  background-color: black !important;
+  color: var(--branco) !important;
+  border: 2px solid var(--amarelo) !important;
 }
 
 body.alto-contraste .campo-label,
 body.alto-contraste .campo-help {
-  color: #ffffff !important;
+  color: var(--branco) !important;
 }
 
-/* Barra de progresso (Meta ODS): trilho preto, preenchimento amarelo visível */
+/* meta ODS */
 body.alto-contraste .visual-progress-bar {
   background-color: #333333 !important;
-  border: 1px solid #d3d301 !important;
+  border: 1px solid var(--amarelo) !important;
 }
 
 body.alto-contraste .visual-progress-fill {
-  background: #d3d301 !important;
+  background: var(--amarelo) !important;
 }
-
-
-/* ---------- RESPONSIVO ---------- */
-@media (max-width: 600px) {
-  .acessibilidade-barra {
-    gap: var(--espaco-xs);
-    padding: var(--espaco-xs) var(--espaco-md);
-  }
-
-  .acess-btn {
-    font-size: 0.78rem;
-    padding: 0.35rem 0.7rem;
-  }
-}
-

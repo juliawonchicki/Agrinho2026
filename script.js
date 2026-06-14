@@ -1,26 +1,11 @@
-/**
- * script.js — Alimento Inteligente | Concurso Agrinho 2026
- *
- * Módulos:
- *  1. Navegação (menu mobile)
- *  2. Animação de contadores (hero stats)
- *  3. Banco de dados de culturas
- *  4. Roteiro interativo (filtros + renderização dinâmica)
- *  5. Simulador de impacto (cálculos + resultados)
- *  6. Utilitários (formatação, scroll)
- */
-
 "use strict";
 
-/* ============================================================
-   1. DADOS: BANCO DE CULTURAS
-   ============================================================ */
-
+// DADOS: BANCO DE CULTURAS 
 const CULTURAS = {
   graos: {
     nome: "Grãos",
-    imgSrc: "imagens/cultura-graos.svg",
-    imgAlt: "Ícone de grãos de cereal",
+    imgSrc: "img/prototipo/graos.svg",
+    imgAlt: "Saco de grãos",
     descricao: 'Soja, milho, trigo, arroz e feijão. A categoria que mais gera receita no agronegócio brasileiro.',
     taxaDesperdicio: 0.12,
     precoMedio: 1800,
@@ -53,8 +38,8 @@ const CULTURAS = {
 
   frutas: {
     nome: "Frutas",
-    imgSrc: "imagens/cultura-frutas.svg",
-    imgAlt: "Ícone de frutas",
+    imgSrc: "img/prototipo/frutas.svg",
+    imgAlt: "Cesto de frutas",
     descricao: "Laranja, banana, maçã, manga, morango e demais frutas frescas de alta perecibilidade.",
     taxaDesperdicio: 0.38,
     precoMedio: 3200,
@@ -87,8 +72,8 @@ const CULTURAS = {
 
   hortalicas: {
     nome: "Hortaliças",
-    imgSrc: "imagens/cultura-hortalicas.svg",
-    imgAlt: "Ícone de hortaliças",
+    imgSrc: "img/prototipo/hortalicas.svg",
+    imgAlt: "Salada de hortaliças",
     descricao: "Alface, tomate, cenoura, beterraba, pimentão e demais vegetais frescos de alta rotatividade.",
     taxaDesperdicio: 0.45,
     precoMedio: 2400,
@@ -121,8 +106,8 @@ const CULTURAS = {
 
   laticinios: {
     nome: "Laticínios",
-    imgSrc: "imagens/cultura-laticinios.svg",
-    imgAlt: "Ícone de laticínios",
+    imgSrc: "img/prototipo/laticinios.svg",
+    imgAlt: "Jarra de leite",
     descricao: "Leite fluido, queijos, iogurtes e manteiga. Produtos com cadeia do frio crítica e prazos curtos.",
     taxaDesperdicio: 0.2,
     precoMedio: 4800,
@@ -155,8 +140,8 @@ const CULTURAS = {
 
   carnes: {
     nome: 'Carnes',
-    imgSrc: "imagens/cultura-carnes.svg",
-    imgAlt: "Ícone de carnes",
+    imgSrc: "img/prototipo/carnes.svg",
+    imgAlt: "Carne bovina",
     descricao: 'Carne bovina, suína, de frango e pescados. Alta densidade proteica e cadeia logística complexa.',
     taxaDesperdicio: 0.22,
     precoMedio: 12000,
@@ -188,9 +173,7 @@ const CULTURAS = {
   },
 };
 
-/* ============================================================
-   DADOS: CENÁRIOS DO SIMULADOR
-   ============================================================ */
+// DADOS: CENÁRIOS DO SIMULADOR
 
 const CENARIOS = {
   basico: { fator: 0.3, nome: "Básico" },
@@ -198,16 +181,7 @@ const CENARIOS = {
   avancado: { fator: 0.8, nome: "Avançado" },
 };
 
-/* Imagens para as equivalências e tecnologias no resultado */
-const IMG_EQUIVALENCIAS = {
-  pessoas: { src: "imagens/equiv-pessoas.svg", alt: "Família" },
-  banho: { src: "imagens/equiv-banho.svg", alt: "Chuveiro" },
-  carro: { src: "imagens/equiv-carro.svg", alt: "Carro" },
-};
-
-/* ============================================================
-   2. MÓDULO: NAVEGAÇÃO MOBILE
-   ============================================================ */
+// NAVEGAÇÃO MOBILE 
 
 function inicializarNavegacao() {
   const botaoToggle = document.getElementById("navToggle");
@@ -240,9 +214,7 @@ function inicializarNavegacao() {
   });
 }
 
-/* ============================================================
-   3. MÓDULO: ANIMAÇÃO DE CONTADORES
-   ============================================================ */
+// ANIMAÇÃO DE CONTADORES 
 
 function animarContador(elemento, valorFinal, duracaoMs = 1600) {
   const inicio = performance.now();
@@ -283,9 +255,7 @@ function inicializarContadores() {
   contadores.forEach((contador) => observer.observe(contador));
 }
 
-/* ============================================================
-   4. MÓDULO: ROTEIRO INTERATIVO
-   ============================================================ */
+// ROTEIRO INTERATIVO 
 
 let culturaAtiva = "graos";
 
@@ -340,17 +310,9 @@ function criarItemLista(dado, classeCSS, delayMs) {
   li.setAttribute("role", "listitem");
   li.style.animationDelay = `${delayMs}ms`;
 
-  /*const img = document.createElement("img");
-  img.src = dado.imgSrc;
-  img.alt = dado.imgAlt;
-  img.classList.add("item-img");
-  img.setAttribute("aria-hidden", "true");
- */
   const texto = document.createElement("span");
   texto.textContent = dado.texto;
-/*
-  li.appendChild(img);
-  */
+
   li.appendChild(texto);
   return li;
 }
@@ -368,16 +330,9 @@ function renderizarTecnologiaDestaque(destaque) {
     span.classList.add("tec-metrica");
     span.setAttribute("role", "listitem");
 
-    // const img = document.createElement("img");
-    // img.src = metrica.imgSrc;
-    // img.alt = metrica.imgAlt;
-    // img.classList.add("tec-metrica-img");
-    // img.setAttribute("aria-hidden", "true");
-
     const textoSpan = document.createElement("span");
     textoSpan.textContent = metrica.texto;
 
-    // span.appendChild(img);
     span.appendChild(textoSpan);
     containerMetricas.appendChild(span);
   });
@@ -405,9 +360,7 @@ function inicializarRoteiroInterativo() {
   renderizarCultura(culturaAtiva);
 }
 
-/* ============================================================
-   5. MÓDULO: SIMULADOR DE IMPACTO
-   ============================================================ */
+// SIMULADOR DE IMPACTO
 
 function calcularImpacto(producaoTon, chavecultura, chaveCenario) {
   const cultura = CULTURAS[chavecultura];
@@ -438,15 +391,12 @@ function gerarEquivalencias(resultado) {
 
   return [
     {
-      img: IMG_EQUIVALENCIAS.pessoas,
       texto: `Alimentar <strong>${pessoasAlimentadas.toLocaleString("pt-BR")} pessoas</strong> por um mês (estimativa média de 2,5 kg/pessoa/mês)`,
     },
     {
-      img: IMG_EQUIVALENCIAS.banho,
       texto: `<strong>${chuveirosEconomizados.toLocaleString("pt-BR")} banhos</strong> de 7 minutos (150L cada) — água virtual preservada`,
     },
     {
-      img: IMG_EQUIVALENCIAS.carro,
       texto: `Emissões equivalentes a <strong>${km_carro.toLocaleString("pt-BR")} km</strong> percorridos por um carro a gasolina (200g CO₂/km)`,
     },
   ];
@@ -492,18 +442,9 @@ function exibirResultados(resultado) {
       li.classList.add("equiv-item");
       li.setAttribute("role", "listitem");
 
-      /*
-      const img = document.createElement("img");
-      img.src = equiv.img.src;
-      img.alt = equiv.img.alt;
-      img.classList.add("equiv-img");
-      img.setAttribute("aria-hidden", "true");
-      */
-
       const textoSpan = document.createElement("span");
       textoSpan.innerHTML = equiv.texto;
 
-      // li.appendChild(img);
       li.appendChild(textoSpan);
       listaEquiv.appendChild(li);
     });
@@ -518,18 +459,9 @@ function exibirResultados(resultado) {
       li.classList.add("tec-recom-item");
       li.setAttribute("role", "listitem");
 
-      /*
-      const img = document.createElement("img");
-      img.src = tec.imgSrc;
-      img.alt = tec.imgAlt;
-      img.classList.add("tec-recom-img");
-      img.setAttribute("aria-hidden", "true");
-      */
-
       const textoSpan = document.createElement("span");
       textoSpan.textContent = tec.texto;
 
-      // li.appendChild(img);
       li.appendChild(textoSpan);
       listaTec.appendChild(li);
     });
@@ -641,9 +573,7 @@ function inicializarSimulador() {
   }
 }
 
-/* ============================================================
-   6. UTILITÁRIOS
-   ============================================================ */
+// UTILITÁRIOS
 
 function atualizarTextoElemento(id, texto) {
   const elemento = document.getElementById(id);
@@ -682,9 +612,7 @@ function inicializarNavAtiva() {
   secoes.forEach((sec) => observer.observe(sec));
 }
 
-/* ============================================================
-   MÓDULO: ACESSIBILIDADE (Contraste + Tamanho de Fonte)
-   ============================================================ */
+// ACESSIBILIDADE (Contraste + Tamanho de Fonte)
 
 const FONTE_MINIMA = 14;
 const FONTE_MAXIMA = 24;
@@ -745,10 +673,7 @@ function inicializarAltoContraste() {
   });
 }
 
-
-/* ============================================================
-   7. INICIALIZAÇÃO GERAL
-   ============================================================ */
+// INICIALIZAÇÃO GERAL
 
 function inicializar() {
   inicializarNavegacao();

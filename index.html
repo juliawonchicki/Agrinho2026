@@ -10,13 +10,13 @@
     <title>Verde que Alimenta | Guia Tecnológico Contra o Desperdício</title>
     <link rel="stylesheet" href="style.css"/>
   </head>
-
+  
   <body>
     <!-- Cabeçalho/NAV -->
     <header class="site-header" role="banner">
       <nav class="nav-container" aria-label="Navegação principal">
         <a href="#inicio" class="nav-logo" aria-label="Verde que Alimenta — início">
-          <img src="img/prototipo/logotipo.png" alt="Logo VerdeQueAlimenta, folha sustentável" class="logo-icon" aria-hidden="true" />
+          <img src="img/logotipo.png" alt="Logo VerdeQueAlimenta, folha sustentável" class="logo-icon" aria-hidden="true" />
           <p class="logo-text">VerdeQue<strong>Alimenta</strong></p>
         </a>
         <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Abrir menu de navegação">
@@ -32,8 +32,8 @@
           <li><a href="#sobre" class="nav-link">Sobre</a></li>
         </ul>
       </nav>
-
-      <!-- ===== BARRA DE ACESSIBILIDADE ===== -->
+      
+      <!-- BARRA DE ACESSIBILIDADE -->
       <div class="acessibilidade-barra" role="toolbar" aria-label="Opções de acessibilidade">
         <button id="btnContraste" class="acess-btn" type="button" aria-pressed="false">
           <span class="acess-icone" aria-hidden="true">◐</span>
@@ -52,14 +52,11 @@
     </header>
 
     <main id="conteudo-principal">
-
-      <!-- ===== SEÇÃO 1: HERO ===== -->
+      <!-- HERO -->
       <section class="hero-section" id="inicio" aria-labelledby="hero-titulo">
         <div class="hero-bg-decor" aria-hidden="true">
           <div class="decor-circle decor-circle--1"></div>
           <div class="decor-circle decor-circle--2"></div>
-          <!-- <div class="decor-circle decor-circle--3"></div> -->
-          <div class="decor-dots"></div>
         </div>
         
         <div class="container hero-content">
@@ -94,7 +91,7 @@
         </div>
       </section>
 
-      <!-- ===== SEÇÃO 2: O PROBLEMA ===== -->
+      <!-- O PROBLEMA -->
       <section class="problema-section" id="problema" aria-labelledby="problema-titulo">
         <div class="container">
           <div class="section-header">
@@ -108,8 +105,8 @@
           </div>
 
           <div class="problema-grid">
-            <article class="problema-card" aria-labelledby="prob1-titulo">
-              <img src="img/openclipart-vectors-thermometer-153138.svg" alt="Termômetro representando temperatura inadequada" class="problema-icone"/>
+            <article class="problema-card card-temperatura" aria-labelledby="prob1-titulo">
+              <img src="img/termometro.svg" alt="Termômetro representando temperatura inadequada" class="problema-icone"/>
               <h3 id="prob1-titulo">Temperatura Inadequada</h3>
               <p>A quebra da cadeia do frio durante o transporte é a principal causa de perda em frutas, hortaliças e laticínios. Sem monitoramento em tempo real, não há como agir rápido o suficiente.</p>
               <div class="problema-impacto">
@@ -118,8 +115,8 @@
               </div>
             </article>
 
-            <article class="problema-card" aria-labelledby="prob2-titulo">
-              <img src="imagens/icone-embalagem.svg" alt="Caixa representando embalagens inadequadas" class="problema-icone"/>
+            <article class="problema-card card-embalagem" aria-labelledby="prob2-titulo">
+              <img src="img/embalagens.svg" alt="Embalagens plásticas representando embalagens inadequadas" class="problema-icone"/>
               <h3 id="prob2-titulo">Embalagens Inadequadas</h3>
               <p>O uso de embalagens que não protegem contra impactos, umidade e luz danifica produtos frágeis. Além disso, embalagens plásticas descartáveis agravam a poluição ambiental.</p>
               <div class="problema-impacto">
@@ -128,8 +125,8 @@
               </div>
             </article>
 
-            <article class="problema-card" aria-labelledby="prob3-titulo">
-              <img src="imagens/icone-embalagem.svg" alt="Caixa representando embalagens inadequadas" class="problema-icone"/>
+            <article class="problema-card card-rotas" aria-labelledby="prob3-titulo">
+              <img src="img/rotas.png" alt="Alfinete representando localização" class="problema-icone"/>
               <h3 id="prob3-titulo">Rotas Ineficientes</h3>
               <p>Percursos longos e mal planejados aumentam o tempo de exposição dos alimentos, o consumo de combustível e as emissões de CO₂ — tornando toda a cadeia mais cara e mais poluente.</p>
               <div class="problema-impacto">
@@ -138,8 +135,8 @@
               </div>
             </article>
 
-            <article class="problema-card" aria-labelledby="prob4-titulo">
-              <img src="imagens/icone-embalagem.svg" alt="Caixa representando embalagens inadequadas" class="problema-icone"/>
+            <article class="problema-card card-gestao" aria-labelledby="prob4-titulo">
+              <img src="img/gestao.svg" alt="Fichario representando gestão manual" class="problema-icone"/>
               <h3 id="prob4-titulo">Gestão Manual e Imprecisa</h3>
               <p>O controle de estoque feito à mão ou em planilhas desatualizadas leva a erros de previsão de demanda, acúmulo de produtos perecíveis e vencimentos desnecessários.</p>
               <div class="problema-impacto">
@@ -157,7 +154,7 @@
         </div>
       </section>
 
-      <!-- ===== SEÇÃO 3: ROTEIRO INTERATIVO ===== -->
+      <!-- ROTEIRO INTERATIVO -->
       <section class="roteiro-section" id="roteiro" aria-labelledby="roteiro-titulo">
         <div class="container">
           <div class="section-header">
@@ -173,23 +170,23 @@
           <!-- Filtros de cultura -->
           <div class="cultura-filtros" role="group" aria-label="Selecione o tipo de cultura">
             <button class="cultura-btn active" data-cultura="graos" aria-pressed="true">
-              <img src="imagens/cultura-graos.svg" alt="" class="cultura-img" aria-hidden="true" />
+              <img src="img/graos.svg" alt="Saco de grãos" class="cultura-img" aria-hidden="true" />
               <span>Grãos</span>
             </button>
             <button class="cultura-btn" data-cultura="frutas" aria-pressed="false">
-              <img src="imagens/cultura-frutas.svg" alt="" class="cultura-img" aria-hidden="true" />
+              <img src="img/frutas.svg" alt="Cesto de frutas" class="cultura-img" aria-hidden="true" />
               <span>Frutas</span>
             </button>
             <button class="cultura-btn" data-cultura="hortalicas" aria-pressed="false">
-              <img src="imagens/cultura-hortalicas.svg" alt="" class="cultura-img" aria-hidden="true" />
+              <img src="img/hortalicas.svg" alt="Salada de hortaliças" class="cultura-img" aria-hidden="true" />
               <span>Hortaliças</span>
             </button>
             <button class="cultura-btn" data-cultura="laticinios" aria-pressed="false">
-              <img src="imagens/cultura-laticinios.svg" alt="" class="cultura-img" aria-hidden="true" />
+              <img src="img/laticinios.svg" alt="Jarra de leite" class="cultura-img" aria-hidden="true" />
               <span>Laticínios</span>
             </button>
             <button class="cultura-btn" data-cultura="carnes" aria-pressed="false">
-              <img src="imagens/cultura-carnes.svg" alt="" class="cultura-img" aria-hidden="true" />
+              <img src="img/carnes.svg" alt="Carne bovina" class="cultura-img" aria-hidden="true" />
               <span>Carnes</span>
             </button>
           </div>
@@ -198,7 +195,7 @@
           <div class="roteiro-painel" id="roteiroPainel" aria-live="polite" aria-atomic="false">
             <div class="roteiro-cultura-header" id="roteiroCulturaHeader">
               <div class="cultura-info">
-                <img src="imagens/cultura-graos.svg" alt="" class="cultura-img-grande" id="culturaImgGrande" aria-hidden="true" />
+                <img src="img/graos.svg" alt="Saco de grãos" class="cultura-img-grande" id="culturaImgGrande" aria-hidden="true" />
                 <div>
                   <h3 class="cultura-nome" id="culturaNome">Grãos</h3>
                   <p class="cultura-descricao" id="culturaDescricao">Carregando informações...</p>
@@ -233,7 +230,7 @@
         </div>
       </section>
 
-      <!-- ===== SEÇÃO 4: SIMULADOR ===== -->
+      <!-- SIMULADOR -->
       <section class="simulador-section" id="simulador" aria-labelledby="simulador-titulo">
         <div class="container">
           <div class="section-header">
@@ -247,7 +244,6 @@
           </div>
 
           <div class="simulador-wrapper">
-            <!-- Formulário do simulador -->
             <div class="simulador-form-area">
               <h3 class="form-titulo">Configure sua Produção</h3>
               <div class="campo-grupo">
@@ -295,7 +291,6 @@
               </p>
             </div>
 
-            <!-- Resultados do simulador -->
             <div class="simulador-resultados" id="simuladorResultados" aria-live="polite" aria-atomic="true" aria-label="Resultados do simulador">
               <div class="resultado-placeholder" id="resultadoPlaceholder" aria-hidden="false">
                 <p>Preencha os campos ao lado e clique em <strong>Calcular Impacto</strong> para ver sua economia estimada.</p>
@@ -345,7 +340,7 @@
         </div>
       </section>
       
-      <!-- ===== SEÇÃO 5: SOBRE / TEMA ===== -->
+      <!-- SOBRE -->
       <section class="sobre-section" id="sobre" aria-labelledby="sobre-titulo">
         <div class="container">
           <div class="section-header">
@@ -376,11 +371,11 @@
  
     </main>
 
-    <!-- ===== FOOTER ===== -->
+    <!-- FOOTER -->
     <footer class="site-footer" role="contentinfo">
       <div class="container footer-conteudo">
         <div class="footer-marca">
-          <img src="img/prototipo/logotipo.png" alt="Logo VerdeQueAlimenta, folha sustentável" class="logo-icon" aria-hidden="true" />
+          <img src="img/logotipo.png" alt="Logo VerdeQueAlimenta, folha sustentável" class="logo-icon" aria-hidden="true" />
           <span class="logo-text">VerdeQue<strong>Alimenta</strong></span>
         </div>
         <p class="footer-tema">
