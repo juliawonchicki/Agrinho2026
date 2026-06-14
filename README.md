@@ -40,10 +40,12 @@ Nenhuma biblioteca ou framework externo foi utilizado, conforme as regras da Sub
 ## Estrutura de Arquivos
 
 ```
-/
+Agrinho2026/
 ├── index.html       # Estrutura principal do site
-├── style.css        # Estilização completa (variáveis, layout, responsividade)
-├── script.js        # Lógica interativa (roteiro, simulador, acessibilidade)
+├── css/
+│   └── style.css    # Estilização completa (variáveis, layout, responsividade)
+├── js/
+│   └── script.js    # Lógica interativa (roteiro, simulador, acessibilidade)
 ├── README.md        # Documentação do projeto
 └── img/             # Imagens e ícones SVG/PNG utilizados no site
     ├── logotipo.png
@@ -79,7 +81,7 @@ Todos os recursos foram utilizados com finalidade educacional, respeitando o tem
 
 | Arquivo | Descrição | Fonte |
 |---|---|---|
-| `img/calculadora.svg` | Ícone de calculadora (editado no canva) | [Link da imagem](https://pixabay.com/pt/photos/escrit%C3%B3rio-caneta-calculadora-1574717/) |
+| `img/calculadora.svg` | Imagem de fundo — calculadora (editado no canva) | [Link da imagem](https://pixabay.com/pt/photos/escrit%C3%B3rio-caneta-calculadora-1574717/) |
 | `img/carnes.svg` | Ícone de carnes | [Link da imagem](https://pixabay.com/pt/vectors/eu-no-comida-carne-bife-cru-148789/) |
 | `img/embalagens.svg` | Ícone de embalagens | [Link da imagem](https://pixabay.com/pt/photos/biscoitos-sacos-de-pl%C3%A1stico-pacote-6380437/) |
 | `img/embalagens-fundo.jpg` | Imagem de fundo — embalagens | [Link da imagem](https://pixabay.com/pt/photos/copo-%C3%B3culos-garrafas-255281/) |
