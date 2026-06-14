@@ -294,7 +294,7 @@ select:focus-visible {
   left: -10px;
   right: -10px;
   bottom: -10px;
-  background-image: url(img/hero-fundo.jpg);
+  background-image: url(../img/hero-fundo.jpg);
   background-size: cover;
   background-position: center;
   opacity: 0.2;        
@@ -511,19 +511,19 @@ select:focus-visible {
 }
 
 .card-temperatura::after {
-  background-image: url(img/temperatura-fundo.jpg);
+  background-image: url(../img/temperatura-fundo.jpg);
 }
 
 .card-embalagem::after {
-  background-image: url(img/embalagens-fundo.jpg);
+  background-image: url(../img/embalagens-fundo.jpg);
 }
 
 .card-rotas::after {
-  background-image: url(img/rotas-fundo.jpg);
+  background-image: url(../img/rotas-fundo.jpg);
 }
 
 .card-gestao::after {
-  background-image: url(img/gestao-fundo.jpg);
+  background-image: url(../img/gestao-fundo.jpg);
 }
 
 .problema-card::before {
@@ -952,7 +952,7 @@ select:focus-visible {
 
 /* resultados */
 .simulador-resultados {
-  background-image: url(img/calculadora.svg);
+  background-image: url(../img/calculadora.svg);
   background-size: cover;
   border-radius: var(--radius-lg);
   padding: var(--espaco-xl);
