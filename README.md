@@ -100,7 +100,7 @@ Todos os recursos foram utilizados com finalidade educacional, respeitando o tem
 
 ## Como Executar Localmente
 
-1. Clone o repositório:
+1. Clone o repositório ou baixe os arquivos:
    ```bash
    git clone https://github.com/juliawonchicki/Agrinho2026.git
    ```
@@ -127,4 +127,4 @@ O projeto está publicado via **GitHub Pages** e pode ser acessado em:
 - **Autora:** Julia Monteiro Wonchicki 
 - **Escola:** Colégio Estadual Aldo Dallago
 - **Município:** Ibaiti - Paraná
-- **Professor(a) orientador(a):** Gislaine da Silva de Oliveira
+- **Professor orientador:** Luiz Gustavo Tavares
